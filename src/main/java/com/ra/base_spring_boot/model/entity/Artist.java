@@ -27,4 +27,6 @@ public class Artist {
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Album> albums;
+    //Cascade: thao tác thêm sửa xóa artist thì album cũng bị tác động, vd xóa Artist thì Album cũng bị xóa
+    //orphanRemoval: nếu Album bị xóa khỏi artist mà không liên kết vs Artist khác thì sẽ bị xóa khỏi DB
 }
